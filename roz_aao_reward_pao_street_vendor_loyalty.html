@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZiPLY | Street Vendor Loyalty</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f9fafb;color:#111}
+    .container{max-width:1100px;margin:auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .logo{font-size:22px;font-weight:bold;color:#16a34a}
+    .btn{background:#16a34a;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;display:inline-block}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:40px}
+    .hero h1{font-size:40px;margin-bottom:15px}
+    .hero p{font-size:18px;line-height:1.6}
+    .card{background:#fff;border-radius:18px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+    h2{font-size:30px;margin:40px 0 20px}
+    ul{padding-left:20px}
+    footer{margin-top:60px;padding:30px 0;text-align:center;color:#555}
+    @media(max-width:768px){.hero{grid-template-columns:1fr}.hero h1{font-size:32px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">ZiPLY</div>
+      <a href="https://wa.me/91YOURNUMBER" class="btn">WhatsApp Now</a>
+      <a href="vendor-login.html" class="btn" style="margin-left:10px">Vendor Login</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Roz Aao Reward Pao</h1>
+        <p>
+          Chai, fast food aur street vendors ke liye ek simple WhatsApp-based reward system.
+          Customer repeat aayenge, sales badhegi — bina app install karwaye.
+        </p>
+        <a href="vendor-login.html" class="btn">Vendor Login</a>
+        <a href="admin-login.html" class="btn" style="margin-left:10px;background:#111">Admin Login</a>
+      </div>
+      <div class="card">
+        <h3>How it Works</h3>
+        <ul>
+          <li>QR scan ya form submit</li>
+          <li>Customer ka reward point auto add</li>
+          <li>WhatsApp par automatic message</li>
+          <li>Reward complete hone par FREE item alert</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2>Perfect For</h2>
+    <div class="grid">
+      <div class="card">Chai Tapri</div>
+      <div class="card">Momos & Fast Food</div>
+      <div class="card">Juice & Shake Stall</div>
+      <div class="card">Street Snacks</div>
+    </div>
+
+    <h2>Why Vendors Love It</h2>
+    <div class="grid">
+      <div class="card">📈 Repeat Customers Increase</div>
+      <div class="card">📱 No App Required</div>
+      <div class="card">🤝 Easy for Vendors</div>
+      <div class="card">💰 Very Low Monthly Cost</div>
+    </div>
+
+    <h2 id="pricing">Pricing ( Model)</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Basic</h3>
+        <p><b>₹100 / month</b></p>
+        <ul>
+          <li>QR based reward</li>
+          <li>Manual WhatsApp reply</li>
+          <li>Stamp tracking</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Automatic</h3>
+        <p><b>₹300 / month</b></p>
+        <ul>
+          <li>Auto WhatsApp message</li>
+          <li>Reward completion alert</li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="contact">Get / Lead Form</h2>
+    <div class="card">
+      <form onsubmit="sendWhatsApp(); return false;">
+        <label>Vendor Name</label><br/>
+        <input type="text" id="vname" required style="width:100%;padding:10px;margin:8px 0"><br/>
+        <label>Mobile Number</label><br/>
+        <input type="tel" id="mobile" required style="width:100%;padding:10px;margin:8px 0"><br/>
+        <label>Stall Type</label><br/>
+        <select id="type" style="width:100%;padding:10px;margin:8px 0">
+          <option>Chai</option>
+          <option>Fast Food</option>
+          <option>Momos</option>
+          <option>Juice</option>
+        </select><br/><br/>
+        <button class="btn" type="submit">Get WhatsApp </button>
+      </form>
+    </div>
+
+    <h2>Vendor Login</h2>
+    <div class="card">
+      <p>Vendor apna reward data dekh sakta hai ( login)</p>
+      <form>
+        <input type="text" placeholder="Vendor ID" style="width:100%;padding:10px;margin:8px 0">
+        <input type="password" placeholder="Password" style="width:100%;padding:10px;margin:8px 0">
+        <button class="btn" type="button">Login</button>
+      </form>
+    </div>
+
+    <script>
+      function sendWhatsApp(){
+        var name = document.getElementById('vname').value;
+        var mob = document.getElementById('mobile').value;
+        var type = document.getElementById('type').value;
+        var msg = `Hello, I want demo of Roz Aao Reward Pao.%0AName: ${name}%0AMobile: ${mob}%0AStall: ${type}`;
+        window.open(`https://wa.me/91YOURNUMBER?text=${msg}`,'_blank');
+      }
+    </script>
+
+    <footer>
+      © 2025 Roz Aao Reward Pao • Street Vendor Digital Loyalty
+    </footer>
+  </div>
+</body>
+</html>
